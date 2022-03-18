@@ -1,0 +1,11 @@
+<h1>Meet the Herd</h1>
+
+<ul>
+  <% @horses.each do |horse| %>
+    <li>
+        <%= horse.name %><br>
+    </li>
+  <% end %>
+</ul>
+
+<%= render "sections/backToHome" %>

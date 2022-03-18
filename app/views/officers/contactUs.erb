@@ -1,0 +1,33 @@
+<h1>Contact Us</h1>
+
+
+<table class="table table-striped col-md-12" id="officers">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Telephone</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @officers.each do |officer| %>
+      <tr>
+        <td>
+          <%= officer.name %>
+        </td>
+        <td>
+          <%= officer.position %>
+        </td>
+        <td>
+          <%= officer.telephone %>
+        </td>
+        <td>
+          <%= officer.email %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= render "sections/backToHome" %>

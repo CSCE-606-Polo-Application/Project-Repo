@@ -1,0 +1,9 @@
+<h1>Welcome to the TAMU Polo Club</h1>
+
+<ul>
+  <% @sections.each do |section| %>
+    <li>
+      <%= link_to section.title, section.URI %>
+    </li>
+  <% end %>
+</ul>

@@ -43,3 +43,9 @@ Member.create!([{
     telephone: "(572)555-5555",
     email: "dKim@tamu.edu"
 }])
+
+Horse.destroy_all
+
+Horse.create!([{
+    
+}])

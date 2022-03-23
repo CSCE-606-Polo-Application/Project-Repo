@@ -101,3 +101,54 @@ Officer.create!([{
     member_id: 3,
     position: "Treasurer"
 }])
+
+RidingPreference.destroy_all
+
+RidingPreference.create!([{
+    member_id: 1 ,
+    horse_id: 1 
+},
+{
+    member_id: 1 ,
+    horse_id: 2
+},
+{
+    member_id: 2 ,
+    horse_id: 1
+},
+{
+    member_id: 4 ,
+    horse_id: 6
+},
+{
+    member_id: 5 ,
+    horse_id: 3
+},
+{
+    member_id: 5,
+    horse_id: 4
+}])
+
+RidingTime.destroy_all
+
+RidingTime.create!([{
+    member_id: 4 ,
+    horse_id: 8 ,
+    officer_id: 3,
+    riding_date: "2022-03-23",
+    riding_time: "18:00"
+},
+{
+    member_id: 5,
+    horse_id: 8,
+    officer_id: 3,
+    riding_date: "2022-03-23",
+    riding_time: "19:00"
+},
+{
+    member_id: 2,
+    horse_id: 3,
+    officer_id: 3,
+    riding_date: "2022-03-23",
+    riding_time: "20:00"
+}])

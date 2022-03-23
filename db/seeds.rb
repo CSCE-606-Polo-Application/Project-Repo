@@ -47,5 +47,57 @@ Member.create!([{
 Horse.destroy_all
 
 Horse.create!([{
-    
+    horse_name: "Bessy",
+    brand_number: "6",
+    availability: true
+},
+{
+    horse_name: "Pixie",
+    brand_number: "9",
+    availability: true
+},
+{
+    horse_name: "Oren",
+    brand_number: "0",
+    availability: true
+},
+{
+    horse_name: "Honey",
+    brand_number: "2",
+    availability: true
+},
+{
+    horse_name: "Starr",
+    brand_number: "4",
+    availability: false
+},
+{
+    horse_name: "Elmer",
+    brand_number: "5",
+    availability: false
+},
+{
+    horse_name: "Hermione",
+    brand_number: "1",
+    availability: true
+},
+{
+    horse_name: "Flash",
+    brand_number: "7",
+    availability: false
+}])
+
+Officer.destroy_all
+
+Officer.create!([{
+    member_id: 1,
+    position: "President"
+},
+{
+    member_id: 2,
+    position: "Vice President"
+},
+{
+    member_id: 3,
+    position: "Treasurer"
 }])

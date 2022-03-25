@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'officers/index'
   get 'members/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
+  resources :horses, :members, :officers, :riding_times
   # Defines the root path route ("/")
-  # root "articles#index"
+  root "members#index"
 end

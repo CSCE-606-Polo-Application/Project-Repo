@@ -1,2 +1,35 @@
-<h1>Members#index</h1>
-<p>Find me in app/views/members/index.html.erb</p>
+<h1>Polo Club Members</h1>
+
+<table class="table table-striped col-md-12" id="members">
+  <thead>
+    <tr>
+      <th>UIN</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Telephone</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td>
+          <%= member.uin %>
+        </td>
+        <td>
+          <%= member.std_first_name %>
+        </td>
+        <td>
+          <%= member.std_last_name %>
+        </td>
+        <td>
+          <%= member.telephone %>
+        </td>
+        <td>
+          <%= member.email %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+Member count:  <%= @members.length %>

@@ -1,2 +1,40 @@
-<h1>Officers#index</h1>
-<p>Find me in app/views/officers/index.html.erb</p>
+<h1>Polo Club Officers</h1>
+
+<table class="table table-striped col-md-12" id="officers">
+  <thead>
+    <tr>
+        <th>Position</th>    
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Telephone</th>
+        <th>Email</th>
+        <th>UIN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @officers.each do |officer| %>
+      <tr>
+        <td>
+          <%= officer.position %>
+        </td>
+        <td>
+          <%= Member.find(officer.member_id).std_first_name %>
+        </td>
+        <td>
+          <%= Member.find(officer.member_id).std_last_name %>
+        </td>
+        <td>
+          <%= Member.find(officer.member_id).telephone %>
+        </td>
+        <td>
+          <%= Member.find(officer.member_id).email %>
+        </td>
+        <td>
+          <%= Member.find(officer.member_id).uin %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+Officer count:  <%= @officers.length %>
+

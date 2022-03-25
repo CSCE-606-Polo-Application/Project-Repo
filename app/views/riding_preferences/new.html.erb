@@ -1,0 +1,8 @@
+<h2>Select New Riding Preference</h2>
+
+<%= form_tag riding_preferences_index_path, :class => 'form' do %>
+  <%= select :movie, :rating, [@horses.name], {}, {:class => 'form-control col-1'} %>
+  <br/>
+  <%= submit_tag 'Save Changes', :class => 'btn btn-primary' %>
+  <%= link_to 'Cancel', member_path(@member), :class => 'btn btn-secondary' %>
+<% end %>

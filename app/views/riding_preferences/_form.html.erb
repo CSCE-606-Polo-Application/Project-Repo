@@ -1,0 +1,12 @@
+
+<tr>
+<%= form_with model: [ @member, @member.riding_preferences.build ] do |form| %>
+    <td>
+      <%= form.label :new_horse %><br>
+      <%= form.text_field :horse_name %>
+    </td>
+    <td>
+      <%= form.submit %>
+    </td>
+  <% end %>
+</tr>

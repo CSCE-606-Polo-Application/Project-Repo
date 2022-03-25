@@ -14,9 +14,6 @@
     <% @members.each do |member| %>
       <tr>
         <td>
-          <%= member.uin %>
-        </td>
-        <td>
           <%= member.std_first_name %>
         </td>
         <td>
@@ -27,6 +24,9 @@
         </td>
         <td>
           <%= member.email %>
+        </td>
+        <td>
+          <%= member.uin %>
         </td>
       </tr>
     <% end %>

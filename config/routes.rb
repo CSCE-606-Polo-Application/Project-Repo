@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/home'
   get 'horses/index'
   get 'riding_preferences/index'
   get 'riding_times/index'
@@ -7,5 +8,5 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :horses, :members, :officers, :riding_times
   # Defines the root path route ("/")
-  root "members#index"
+  root "pages#home"
 end

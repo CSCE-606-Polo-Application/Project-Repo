@@ -18,19 +18,19 @@
           <%= officer.position %>
         </td>
         <td>
-          <%= Member.find(officer.member_id).std_first_name %>
+          <%= officer.member.std_first_name %>
         </td>
         <td>
-          <%= Member.find(officer.member_id).std_last_name %>
+          <%= officer.member.std_last_name %>
         </td>
         <td>
-          <%= Member.find(officer.member_id).telephone %>
+          <%= officer.member.telephone %>
         </td>
         <td>
-          <%= Member.find(officer.member_id).email %>
+          <%= officer.member.email %>
         </td>
         <td>
-          <%= Member.find(officer.member_id).uin %>
+          <%= officer.member.uin %>
         </td>
       </tr>
     <% end %>

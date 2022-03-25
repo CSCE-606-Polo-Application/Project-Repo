@@ -1,0 +1,33 @@
+<h1><em><%= @member.std_first_name %> <%= @member.std_last_name %></em> </h1>
+
+<ul id="details">
+  <li>
+    Member Since:
+    <%= @join_date %>
+  </li>
+  <li>
+    UIN:
+    <%= @member.uin %>
+  </li>
+  <li>
+    Telephone:
+    <%= @member.telephone %>
+  </li>
+  <li>
+    Email:
+    <%= @member.email %>
+  </li>
+</ul>
+
+<table class="table table-striped col-md-12" id="members">
+<thead>
+  <tr>
+    <th>Preferred Horses</th>
+    <th>Add/Remove</th>
+  </tr>
+</thead>
+<tbody>
+    <%= render @member.riding_preferences %>
+</tbody>
+</table>
+<%= link_to 'Add new riding preference', new_member_riding_preference_path(@member), :class => 'btn btn-primary' %>

@@ -1,0 +1,12 @@
+<h3>Update Member Details</h3>
+<%= form_with model: @member do |form| %>
+  <%= form.text_field :uin, placeholder: "UIN" %>
+  <%= form.text_field :std_first_name, placeholder: "First Name" %>
+  <%= form.text_field :std_last_name, placeholder: "Last Name" %>
+  <%= form.text_field :telephone, placeholder: "Phone Number" %>
+  <%= form.text_field :email, placeholder: "Email Address" %>
+  <%= form.submit %>
+<% end %>
+<%= render "members/backmember" %>
+<%= render "pages/backhome" %>
+

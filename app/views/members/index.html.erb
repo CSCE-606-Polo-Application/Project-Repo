@@ -32,10 +32,19 @@
         <td>
         <%= link_to "Profile", member_path(member) %>
         </td>
+        <td>
+        <%= button_to 'Edit', edit_member_path(member), method: 'get'%>
+        </td>
+        <td>
+        <%= button_to 'Remove', member_path(member), method: 'delete', data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-Member count:  <%= @members.length %>
+
+<%= link_to "Add a New Member", new_member_path %>
+<div>Member count:  <%= @members.length %>
+</div>
 
 <%= render "pages/backhome" %>

@@ -30,4 +30,10 @@
     <%= render @member.riding_preferences %>
 </tbody>
 </table>
+
+
+<h4><%= button_to 'Remove', @member, method:"delete", data: { confirm: 'Are you sure?' } %> </h4>
+
 <%= link_to 'Add new riding preference', new_member_riding_preference_path(@member), :class => 'btn btn-primary' %>
+<%= render "members/backmember" %>
+<%= render "pages/backhome" %>

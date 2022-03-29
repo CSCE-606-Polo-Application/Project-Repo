@@ -1,0 +1,25 @@
+<h3>New Horse</h3>
+<%= form_with model: @horse do |form| %>
+  <div>
+    <%= form.label :horse_name %><br>
+    <%= form.text_field :horse_name %>
+  </div>
+
+  <div>
+    <%= form.label :brand_number %><br>
+    <%= form.text_field :brand_number %>
+  </div>
+
+  <div>
+    <%= form.label :available? %><br>
+    <%= form.select :availability, ['true', 'false'], selected: 'true' %>
+  </div>
+
+  <div>
+  <%= form.submit %>
+  </div>
+
+<% end %>
+<%= render "horses/backhorse" %>
+<%= render "pages/backhome" %>
+

@@ -1,0 +1,24 @@
+<h3>Update Horse Details</h3>
+<%= form_with model: @horse do |form| %>
+  <div>
+    <%= form.label :horse_name %><br>
+    <%= form.text_field :horse_name, placeholder: @horse.horse_name %>
+  </div>
+
+  <div>
+    <%= form.label :brand_number %><br>
+    <%= form.text_field :brand_number, placeholder: @horse.brand_number %>
+  </div>
+
+  <div>
+    <%= form.label :available? %><br>
+    <%= form.select :availability, ['true', 'false'], selected: @horse.availability %>
+  </div>
+
+  <div>
+  <%= form.submit %>
+  </div>
+  
+<% end %>
+<%= render "horses/backhorse" %>
+<%= render "pages/backhome" %>

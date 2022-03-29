@@ -20,10 +20,23 @@
         <td>
           <%= horse.availability %>
         </td>
+        <td>
+        <%= button_to 'Profile', horse_path(horse), method: 'get'%>
+        </td>
+        <td>
+        <%= button_to 'Edit', edit_horse_path(horse), method: 'get'%>
+        </td>
+        <td>
+        <%= button_to 'Remove', horse_path(horse), method: 'delete', data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-Horse count:  <%= @horses.length %>
+<%= link_to "Add a New Horse", new_horse_path %>
+
+<div>
+  Horse count:  <%= @horses.length %>
+</div>
 
 <%= render "pages/backhome" %>

@@ -1,0 +1,18 @@
+<h1><em><%= @horse.horse_name %></em> </h1>
+
+<ul id="details">
+  <li>
+    Brand Number:
+    <%= @horse.brand_number %>
+  </li>
+  <li>
+    Available?
+    <%= @horse.availability %>
+  </li>
+</ul>
+
+<%= button_to 'Edit', edit_horse_path(@horse), method: 'get'%>
+<%= button_to 'Remove', horse_path(@horse), method: 'delete', data: { confirm: 'Are you sure?' } %>
+
+<%= render "horses/backhorse" %>
+<%= render "pages/backhome" %>

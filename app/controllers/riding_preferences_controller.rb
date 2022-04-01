@@ -1,17 +1,26 @@
 class RidingPreferencesController < ApplicationController
-  def index
-  end
-
-  def show
-    @member = Member.find(params[:member_id])
-    @riding_preference = @member.riding_preferences.find(params[:id])
-    @riding_preference.destroy
-    redirect_to member_path(@member), status: 303
-  end
 
   def new
     @member = Member.find(params[:member_id])
-    @horses = Horse.all
+    @riding_preference = RidingPreference.new
+    horses = Horse.all
+    @horse_names = []
+    horses.each do |horse|
+      @horse_names << horse.horse_name
+    end
   end
 
+  def create
+    riding_preference = RidingPreference.create(riding_preference_params)
+    redirect_to member_riding_preference_path(riding_preference)
+  end
+
+  private
+
+  def riding_preference_params
+    horse_id = Horse.find_by(horse_name: :horse_name)
+    params.require(:riding_preference).permit(:member_id,:horse_id)
+  end
+
+  
 end

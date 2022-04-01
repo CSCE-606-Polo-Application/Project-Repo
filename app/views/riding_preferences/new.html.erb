@@ -1,8 +1,12 @@
-<h2>Select New Riding Preference</h2>
+<h2>Select New Riding Preference For <%= @member.std_first_name %> <%= @member.std_last_name%></h2>
 
-<%= form_tag riding_preferences_index_path, :class => 'form' do %>
-  <%= select :movie, :rating, [@horses.name], {}, {:class => 'form-control col-1'} %>
-  <br/>
-  <%= submit_tag 'Save Changes', :class => 'btn btn-primary' %>
-  <%= link_to 'Cancel', member_path(@member), :class => 'btn btn-secondary' %>
+<%= form_with model: @riding_preference, url: member_riding_preferences_path do |form| %>
+  <div>
+    <%= form.label :horse_name %><br>
+    <%= form.select :horse_name, @horse_names%>
+  </div>
+
+  <div>
+  <%= form.submit %>
+  </div>
 <% end %>

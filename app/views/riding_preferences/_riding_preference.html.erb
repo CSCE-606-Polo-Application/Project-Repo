@@ -1,0 +1,13 @@
+
+  <tr>
+    <td>
+      <%= riding_preference.horse.horse_name %>
+    </td>
+    <td>
+      <%= link_to "Remove", [riding_preference.member, riding_preference], data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      } %>
+    </td>
+  </tr>
+

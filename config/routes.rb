@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
-  root "sections#index"
-
-  get "/home", to: "sections#index"
-  get "/contactUs", to: "officers#contactUs"
-
-  resources :horses
+  get 'pages/home'
+  get 'riding_preferences/index'
+  get 'riding_times/index'
+  get 'officers/index'
+  get 'members/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :horses, :officers, :riding_times
 
+  resources :members do
+    resources :riding_preferences
+  end
   # Defines the root path route ("/")
-  # root "articles#index"
+  root "pages#home"
+end
+
+Rails.application.routes.draw do
+  resources :members
 end

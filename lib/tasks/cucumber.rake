@@ -31,10 +31,10 @@ begin
       t.fork = true # You may get faster startup if you set this to false
       t.profile = 'rerun'
     end
-    
+
     desc 'Run all features'
     task all: [:ok, :wip]
-    
+
     task :statsetup do
       require 'rails/code_statistics'
       ::STATS_DIRECTORIES << %w(Cucumber\ features features) if File.exist?('features')

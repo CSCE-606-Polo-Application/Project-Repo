@@ -1,5 +1,5 @@
 class OfficersController < ApplicationController
-  def contactUs
+  def index
     @officers = Officer.all
   end
 end

@@ -1,11 +1,42 @@
-<h1>Meet the Herd</h1>
+<h1>Meet The Herd</h1>
 
-<ul>
-  <% @horses.each do |horse| %>
-    <li>
-        <%= horse.name %><br>
-    </li>
-  <% end %>
-</ul>
+<table class="table table-striped col-md-12" id="horses">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Brand</th>
+      <th>Available?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @horses.each do |horse| %>
+      <tr>
+        <td>
+          <%= horse.horse_name %>
+        </td>
+        <td>
+          <%= horse.brand_number %>
+        </td>
+        <td>
+          <%= horse.availability %>
+        </td>
+        <td>
+        <%= button_to 'Profile', horse_path(horse), method: 'get'%>
+        </td>
+        <td>
+        <%= button_to 'Edit', edit_horse_path(horse), method: 'get'%>
+        </td>
+        <td>
+        <%= button_to 'Remove', horse_path(horse), method: 'delete', data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Add a New Horse", new_horse_path %>
 
-<%= render "sections/backToHome" %>
+<div>
+  Horse count:  <%= @horses.length %>
+</div>
+
+<%= render "pages/backhome" %>

@@ -10,27 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_15_030324) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_22_144045) do
   create_table "horses", force: :cascade do |t|
-    t.string "name"
+    t.string "horse_name"
+    t.string "brand_number"
+    t.boolean "availability"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "officers", force: :cascade do |t|
-    t.string "name"
-    t.string "position"
+  create_table "members", force: :cascade do |t|
+    t.string "uin"
+    t.string "std_first_name"
+    t.string "std_last_name"
     t.string "telephone"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "sections", force: :cascade do |t|
-    t.string "title"
-    t.string "URI"
+  create_table "officers", force: :cascade do |t|
+    t.string "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "member_id", null: false
+    t.index ["member_id"], name: "index_officers_on_member_id"
   end
 
+  create_table "riding_preferences", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "member_id", null: false
+    t.integer "horse_id", null: false
+    t.index ["horse_id"], name: "index_riding_preferences_on_horse_id"
+    t.index ["member_id"], name: "index_riding_preferences_on_member_id"
+  end
+
+  create_table "riding_times", force: :cascade do |t|
+    t.date "riding_date"
+    t.time "riding_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "horse_id", null: false
+    t.integer "officer_id", null: false
+    t.integer "member_id", null: false
+    t.index ["horse_id"], name: "index_riding_times_on_horse_id"
+    t.index ["member_id"], name: "index_riding_times_on_member_id"
+    t.index ["officer_id"], name: "index_riding_times_on_officer_id"
+  end
+
+  add_foreign_key "officers", "members"
+  add_foreign_key "riding_preferences", "horses"
+  add_foreign_key "riding_preferences", "members"
+  add_foreign_key "riding_times", "horses"
+  add_foreign_key "riding_times", "members"
+  add_foreign_key "riding_times", "officers"
 end

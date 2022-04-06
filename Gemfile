@@ -46,7 +46,8 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :production do
-  gem "pg"
+  gem 'pg', '~> 0.21' # for Heroku deployment
+  gem 'rails_12factor'
 end
 
 group :development, :test do
@@ -70,7 +71,7 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
+  gem "capybara", ">= 2.18"
   gem "selenium-webdriver"
   gem "webdrivers"
   gem 'cucumber-rails', require: false

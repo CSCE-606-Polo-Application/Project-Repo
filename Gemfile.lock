@@ -309,20 +309,21 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   debug
-  importmap-rails
-  jbuilder
+  importmap-rails (~> 1.0.3)
+  jbuilder (~> 2.11.5)
   pg (~> 0.21)
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.3)
   rails-controller-testing
-  rails_12factor
+  rails_12factor (~> 0.0.3)
   rspec-rails
   selenium-webdriver
   simplecov
-  sprockets-rails
-  sqlite3 (~> 1.4)
-  stimulus-rails
-  turbo-rails
+  sprockets-rails (~> 3.4.2)
+  sqlite3
+  stimulus-rails (~> 1.0.4)
+  turbo-rails (~> 1.0.1)
+  tzinfo
   tzinfo-data
   web-console
   webdrivers

@@ -320,7 +320,7 @@ DEPENDENCIES
   selenium-webdriver
   simplecov
   sprockets-rails (~> 3.4.2)
-  sqlite3
+  sqlite3 (~> 1.4.2)
   stimulus-rails (~> 1.0.4)
   turbo-rails (~> 1.0.1)
   tzinfo

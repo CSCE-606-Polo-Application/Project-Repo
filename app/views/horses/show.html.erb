@@ -10,6 +10,10 @@
     <%= @horse.availability %>
   </li>
 </ul>
+<h2>Description</h2>
+<%= @horse.description %>
+
+<h2> Navigation</h2>
 
 <%= button_to 'Edit', edit_horse_path(@horse), method: 'get'%>
 <%= button_to 'Remove', horse_path(@horse), method: 'delete', data: { confirm: 'Are you sure?' } %>

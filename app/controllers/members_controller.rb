@@ -7,7 +7,6 @@ class MembersController < ApplicationController
 
   def show
     @join_date = @member.created_at.strftime("%m/%d/%Y")
-    @member = Member.find(params[:id])
   end
 
   def new

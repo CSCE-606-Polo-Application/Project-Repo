@@ -2,12 +2,10 @@ class RidingPreferencesController < ApplicationController
 
   def new
     @member = Member.find(params[:member_id])
+    puts @member.riding_preferences
     @riding_preference = RidingPreference.new
-    horses = Horse.all
-    @horse_names = []
-    horses.each do |horse|
-      @horse_names << horse.horse_name
-    end
+    @horses = Horse.where.not(id: @member.horses.ids).collect { |h| [ h.horse_name, h.id ] }
+
   end
 
   def create

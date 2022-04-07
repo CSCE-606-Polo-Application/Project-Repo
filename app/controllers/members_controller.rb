@@ -6,8 +6,6 @@ class MembersController < ApplicationController
   end
 
   def show
-    id = params[:id]
-    @member = Member.find(id)
     @join_date = @member.created_at.strftime("%m/%d/%Y")
     @member = Member.find(params[:id])
   end
@@ -22,24 +20,16 @@ class MembersController < ApplicationController
   end
 
   def edit
-    @member = Member.find(params[:id])
+
   end
 
   def update
-    @member.update(member_params)
-
-    redirect_to member_path(@member)
-  end
-  def update
-    @member = Member.find(params[:id])
-
     @member.update(member_params)
 
     redirect_to member_path(@member)
   end
 
   def destroy
-    @member = Member.find(params[:id])
     @member.destroy
 
     redirect_to members_path

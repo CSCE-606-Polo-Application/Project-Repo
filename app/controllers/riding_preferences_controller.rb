@@ -15,6 +15,10 @@ class RidingPreferencesController < ApplicationController
     redirect_to member_riding_preference_path(riding_preference)
   end
 
+  def destroy
+    @riding_preference.destroy
+  end
+
   private
 
   def riding_preference_params

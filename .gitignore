@@ -11,6 +11,10 @@
 /db/*.sqlite3
 /db/*.sqlite3-*
 
+# ignore coverage
+
+/coverage/*
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*

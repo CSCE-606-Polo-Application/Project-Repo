@@ -35,8 +35,14 @@ gem "jbuilder"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo'
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+gem "tzinfo-data"
 
+#Bootstrap and Other Styling Stuff
+gem 'bootstrap', '~> 4.4.1'
+gem 'jquery-rails'
+
+#Sending Emails
+gem 'mail_form'
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 

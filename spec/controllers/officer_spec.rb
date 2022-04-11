@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe OfficiersController do
+RSpec.describe OfficersController do
     describe 'GET index' do
         it 'assigns @officers' do
             officer = Officer.create

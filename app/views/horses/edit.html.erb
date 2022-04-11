@@ -16,6 +16,11 @@
   </div>
 
   <div>
+    <%= form.label :Description %><br>
+    <%= form.text_area :description, placeholer: @horse.description, size: "40x10" %>
+  </div>
+
+  <div>
   <%= form.submit %>
   </div>
   

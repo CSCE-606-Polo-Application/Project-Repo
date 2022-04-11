@@ -1,5 +1,6 @@
 <h1><em><%= @horse.horse_name %></em> </h1>
 
+
 <ul id="details">
   
   <li>
@@ -12,8 +13,51 @@
   </li>
 </ul>
 
-<%= button_to 'Edit', edit_horse_path(@horse), method: 'get'%>
-<%= button_to 'Remove', horse_path(@horse), method: 'delete', data: { confirm: 'Are you sure?' } %>
+<table class="table table-striped col-md-12" id="details" width="370" border="1">
+  <tbody>
+    <tr>
+      <td width="30%">
+      Brand Number:
+      </td>
+      <td width="70%">
+      <%= @horse.brand_number %>
+      </td>
+    </tr>
+    <tr>
+      <td width="30%">
+      Available?
+      </td>
+      <td width="70%">
+      <%= @horse.availability %>
+      </td>
+    </tr>
+    <tr>
+      <td width="25%">
+      Description
+      </td>
+      <td width="75%">
+      <%= @horse.description %>
+      </td>
+    </tr>
+  </tbody>  
+</table>
 
-<%= render "horses/backhorse" %>
-<%= render "pages/backhome" %>
+
+<table class="table table-striped col-md-12" id="navigation">
+  <tbody>
+    <tr>
+      <td>
+        <%= button_to 'Edit', edit_horse_path(@horse), method: 'get'%>
+      </td>
+      <td>
+        <%= button_to 'Delete', horse_path(@horse), method: 'delete', data: { confirm: 'Are you sure?' } %>
+      </td>
+      <td>
+      <%= render "horses/backhorse" %>
+      </td>
+      <td>
+      <%= render "pages/backhome" %>
+      </td>
+    </tr>
+  </tbody>
+</table>

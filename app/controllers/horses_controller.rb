@@ -39,6 +39,6 @@ class HorsesController < ApplicationController
   private
 
   def horse_params
-    params.require(:horse).permit(:horse_name,:brand_number,:availability)
+    params.require(:horse).permit(:horse_name,:brand_number,:availability,:description)
   end
 end

@@ -15,6 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_22_144045) do
     t.string "horse_name"
     t.string "brand_number"
     t.boolean "availability"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -4,6 +4,7 @@ class CreateHorses < ActiveRecord::Migration[7.0]
       t.string :horse_name
       t.string :brand_number
       t.boolean :availability
+      t.text :description
       
       t.timestamps
     end

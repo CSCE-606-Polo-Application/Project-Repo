@@ -1,5 +1,18 @@
 <h1><em><%= @horse.horse_name %></em> </h1>
 
+
+<ul id="details">
+  
+  <li>
+    Brand Number:
+    <%= @horse.brand_number %>
+  </li>
+  <li>
+    Available?
+    <%= @horse.availability %>
+  </li>
+</ul>
+
 <table class="table table-striped col-md-12" id="details" width="370" border="1">
   <tbody>
     <tr>
@@ -28,6 +41,7 @@
     </tr>
   </tbody>  
 </table>
+
 
 <table class="table table-striped col-md-12" id="navigation">
   <tbody>

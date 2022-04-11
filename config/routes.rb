@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'riding_times/index'
   get 'officers/index'
   get 'members/index'
+  get 'contact/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :horses, :officers, :riding_times
 

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'riding_times/index'
   get 'officers/index'
   get 'members/index'
-  get 'contact/index'
+  get 'contacts/new'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :horses, :officers, :riding_times
 
@@ -17,4 +17,6 @@ end
 
 Rails.application.routes.draw do
   resources :members
+  resources :contacts, only: [:new, :create]
 end
+

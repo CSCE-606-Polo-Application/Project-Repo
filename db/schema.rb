@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_22_144045) do
     t.string "std_last_name"
     t.string "telephone"
     t.string "email"
+    t.text "riding_experience"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

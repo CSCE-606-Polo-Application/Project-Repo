@@ -37,7 +37,7 @@ class MembersController < ApplicationController
   private
 
   def member_params
-    params.require(:member).permit(:std_first_name,:std_last_name,:telephone,:email,:uin)
+    params.require(:member).permit(:std_first_name,:std_last_name,:telephone,:email,:uin,:riding_experience)
   end
 
   def current_member

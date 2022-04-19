@@ -8,6 +8,7 @@
 
   Given("I am on the New Horse page") do
     visit new_horse_path
+    @model = "horse_"
   end
   
   When('I click on {string}') do |string|
@@ -18,15 +19,15 @@
     expect(page.current_url).to eq(page.current_host+new_horse_path)
   end
 
-  Given('{string} is set to {string}') do |string, string2|
-    begin
-      fill_in string, with: string2
+  # Given('{string} is set to {string}') do |string, string2|
+  #   begin
+  #     fill_in string, with: string2
 
-    rescue
-      select string2, from: "horse_"+string.downcase
-    end
+  #   rescue
+  #     select string2, from: "horse_"+string.downcase
+  #   end
 
-  end
+  # end
 
   Then('I will see {string}') do |string|
     expect(page).to have_text string

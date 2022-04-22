@@ -1,18 +1,10 @@
   Given('I am on the herd page') do
     visit horses_path
   end
-  
-  Given('I am an officer') do
-    
-  end
 
   Given("I am on the New Horse page") do
     visit new_horse_path
     @model = "horse_"
-  end
-  
-  When('I click on {string}') do |string|
-    click_on string
   end
   
   Then('I will be on the New Horse page') do

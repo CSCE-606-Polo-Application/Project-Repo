@@ -10,12 +10,3 @@ Given('I am on the home page') do
     expect(page.has_content?(string)).to eq(false)
   end
 
-Given('{string} is set to {string}') do |string, string2|
-    begin
-      fill_in string, with: string2
-
-    rescue
-      select string2, from: @model+string.downcase
-    end
-
-  end

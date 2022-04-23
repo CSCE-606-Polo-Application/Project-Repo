@@ -11,16 +11,12 @@
     expect(page.current_url).to eq(page.current_host+new_horse_path)
   end
 
-  # Given('{string} is set to {string}') do |string, string2|
-  #   begin
-  #     fill_in string, with: string2
-
-  #   rescue
-  #     select string2, from: "horse_"+string.downcase
-  #   end
-
-  # end
-
-  Then('I will see {string}') do |string|
-    expect(page).to have_text string
+  Given('a horse named {string}') do |string|
+    horse_name = string
+    make_new_horse(horse_name)
   end
+  
+  def make_new_horse(horse_name="Bill",brand_number="1",availability=true)
+    @horse = Horse.create({"horse_name"=>horse_name, "brand_number"=>brand_number, "availability"=>availability })
+  end
+

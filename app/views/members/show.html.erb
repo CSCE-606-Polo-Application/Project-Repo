@@ -57,7 +57,7 @@
 </tbody>
 </table>
 
-<%= button_to 'Add Preferred Horse', new_member_riding_preference_path(@member)%>
+<%= button_to 'Add Preferred Horse', new_member_riding_preference_path(@member), method: 'get'%>
 <%= button_to 'Edit Member', edit_member_path(@member), method: 'get'%>
 <%= button_to 'Remove Member', @member, method:"delete", data: { confirm: 'Are you sure?' } %>
 

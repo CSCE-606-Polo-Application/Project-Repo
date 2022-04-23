@@ -3,8 +3,8 @@ class RidingTimesController < ApplicationController
 
     def new
         @riding_time = RidingTime.new
-        @members = Member.all.collect { |m| [ m.std_first_name + " " + m.std_last_name, m.id ] }
-        @horses = Horse.all.collect { |h| [ h.horse_name, h.id ] }
+        @members = Member.where.not(id: @riding_schedule.members.ids).collect { |m| [ m.std_first_name + " " + m.std_last_name, m.id ] }
+        @horses = Horse.where.not(availability: false).where.not(id: @riding_schedule.horses.ids).collect { |h| [ h.horse_name, h.id ] }
     end
 
     def create

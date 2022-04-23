@@ -12,6 +12,6 @@
   </div>
 
   <div>
-  <%= form.submit "Submit"%>
+  <%= form.submit "Submit"%> <%= button_to "Cancel",riding_schedule_path(@riding_schedule), method: 'get' %>
   </div>
 <% end %>

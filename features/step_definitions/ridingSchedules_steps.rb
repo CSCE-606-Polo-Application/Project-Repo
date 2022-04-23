@@ -24,32 +24,37 @@ Given('the schedule date is set for next Wednesday') do
   month = date.split(" ")[0]
   day = date.split(" ")[1]
   
-  select month, from: "riding_schedule[riding_date(2i)]"
-  select day, from: "riding_schedule[riding_date(3i)]"
+  select month, from: "riding_schedule[riding_datetime(2i)]"
+  select day, from: "riding_schedule[riding_datetime(3i)]"
 
 end
 
 Given('the schedule time is set for {string}') do |string|
   hour = string.split(":")[0]
+  if hour.length ==1
+    hour = "0"+hour
+  end
+
   minutes = string.split(":")[1].split(" ")[0]
   am_pm = string.split(" ")[1]
-  if am_pm == "pm"
-    hour = String(Integer(hour) + 12)
-  end
-  select hour, from: "riding_schedule[riding_time(4i)]"
-  select minutes, from: "riding_schedule[riding_time(5i)]"
+  select (hour+" "+am_pm.upcase), from: "riding_schedule[riding_datetime(4i)]"
+  select minutes, from: "riding_schedule[riding_datetime(5i)]"
 end
 
 Then('I will see a schedule for next Wednesday at {string}') do |string|
   date = get_next_wednesday
-  month = String(Date::MONTHNAMES.index(date.split(" ")[0]))
+  month = date.split(" ")[0]
   day = date.split(" ")[1]
 
   hour = string.split(":")[0]
-  minutes = string.split(":")[1].split(" ")[0]
-  am_pm = string.split(" ")[1]
-  if am_pm == "pm"
-    hour = String(Integer(hour) + 12)
+  if hour.length ==1
+    hour = "0"+hour
   end
-  expect(page).to have_text (month+"-"+day)
+  minutes = string.split(":")[1].split(" ")[0]
+  if minutes == "0"
+    minutes == "00"
+  end
+  am_pm = string.split(" ")[1]
+
+  expect(page).to have_text (month+" "+day+" - "+hour+":"+minutes+" "+am_pm.upcase)
 end

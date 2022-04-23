@@ -49,24 +49,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_22_223758) do
   end
 
   create_table "riding_schedules", force: :cascade do |t|
-    t.date "riding_date"
-    t.time "riding_time"
+    t.datetime "riding_datetime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "riding_times", force: :cascade do |t|
-    t.date "riding_date"
-    t.time "riding_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "horse_id", null: false
-    t.integer "officer_id", null: false
     t.integer "member_id", null: false
     t.integer "riding_schedule_id", null: false
     t.index ["horse_id"], name: "index_riding_times_on_horse_id"
     t.index ["member_id"], name: "index_riding_times_on_member_id"
-    t.index ["officer_id"], name: "index_riding_times_on_officer_id"
     t.index ["riding_schedule_id"], name: "index_riding_times_on_riding_schedule_id"
   end
 
@@ -75,6 +70,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_22_223758) do
   add_foreign_key "riding_preferences", "members"
   add_foreign_key "riding_times", "horses"
   add_foreign_key "riding_times", "members"
-  add_foreign_key "riding_times", "officers"
   add_foreign_key "riding_times", "riding_schedules"
 end

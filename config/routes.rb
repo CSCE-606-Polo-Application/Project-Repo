@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'pages/home'
   get 'riding_preferences/index'
-  get 'riding_times/index'
   get 'officers/index'
   get 'members/index'
   get 'contacts/new'

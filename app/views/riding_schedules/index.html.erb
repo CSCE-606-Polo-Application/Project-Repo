@@ -2,7 +2,7 @@
 
 <%= link_to "Add a New Riding Schedule", new_riding_schedule_path %>
 
-<table class="table table-striped col-md-12" id="members">
+<table class="table table-striped col-md-12" id="riding times">
   <thead>
     <tr>
       <th>Riding Date & Time</th>
@@ -12,7 +12,10 @@
     <% @riding_schedules.each do |riding_schedule| %>
       <tr>
         <td>
-            <%= riding_schedule.riding_date %> <%= riding_schedule.riding_time %>
+            <%=link_to riding_schedule.riding_datetime.strftime("%B %d - %I:%M %p"), riding_schedule_path(riding_schedule) %>
+        </td>
+        <td>
+          <%= button_to 'Delete', riding_schedule_path(riding_schedule), method: 'delete', data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>

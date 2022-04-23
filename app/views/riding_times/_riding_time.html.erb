@@ -1,0 +1,16 @@
+
+  <tr>
+    <td>
+      <%= riding_time.member.std_first_name %> <%= riding_time.member.std_last_name %>
+    </td>
+    <td>
+      <%= riding_time.horse.horse_name %>
+    </td>
+    <td>
+      <%= riding_time.horse.brand_number %>
+    </td>
+    <td>
+    <%= button_to 'Remove', riding_schedule_riding_time_path(@riding_schedule,riding_time), method: 'delete', data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+

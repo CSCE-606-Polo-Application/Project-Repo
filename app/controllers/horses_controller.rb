@@ -18,7 +18,11 @@ class HorsesController < ApplicationController
 
   def create 
     horse = Horse.create(horse_params)
-    redirect_to horse_path(horse)
+    if horse.valid?
+      redirect_to horse_path(horse)
+    else
+      redirect_to new_horse_path
+    end
   end
 
   def update

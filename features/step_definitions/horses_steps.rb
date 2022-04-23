@@ -1,34 +1,22 @@
   Given('I am on the herd page') do
     visit horses_path
   end
-  
-  Given('I am an officer') do
-    
-  end
 
   Given("I am on the New Horse page") do
     visit new_horse_path
     @model = "horse_"
   end
   
-  When('I click on {string}') do |string|
-    click_on string
-  end
-  
   Then('I will be on the New Horse page') do
     expect(page.current_url).to eq(page.current_host+new_horse_path)
   end
 
-  # Given('{string} is set to {string}') do |string, string2|
-  #   begin
-  #     fill_in string, with: string2
-
-  #   rescue
-  #     select string2, from: "horse_"+string.downcase
-  #   end
-
-  # end
-
-  Then('I will see {string}') do |string|
-    expect(page).to have_text string
+  Given('a horse named {string}') do |string|
+    horse_name = string
+    make_new_horse(horse_name)
   end
+  
+  def make_new_horse(horse_name="Bill",brand_number="1",availability=true)
+    @horse = Horse.create({"horse_name"=>horse_name, "brand_number"=>brand_number, "availability"=>availability })
+  end
+

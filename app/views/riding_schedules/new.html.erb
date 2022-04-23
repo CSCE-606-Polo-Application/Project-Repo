@@ -1,0 +1,12 @@
+<h1> New Riding Schedule </h1>
+
+<%= form_with model: @riding_schedule do |form| %>
+  <div>
+    <%= form.label "Date and time" %><br>
+    <%= form.datetime_select :riding_datetime, {minute_step: 30, ampm: true}  %>
+  </div>
+  
+  <%= form.submit %>
+<% end %>
+<%= render "members/backmember" %>
+<%= render "pages/backhome" %>

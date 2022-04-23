@@ -1,0 +1,17 @@
+<h2>Sign up to ride on <%=@riding_schedule.riding_datetime.strftime("%B %d - %I:%M %p")%></h2>
+
+<%= form_with model: @riding_time, url: riding_schedule_riding_times_path do |form| %>
+  <div>
+    <%= form.label "Rider Name" %><br>
+    <%= form.select :member_id, @members, { prompt: "Rider" }%>
+  </div>
+
+  <div>
+    <%= form.label "Horse Name" %><br>
+    <%= form.select :horse_id, @horses, { prompt: "Horse" }%>
+  </div>
+
+  <div>
+  <%= form.submit "Submit"%>
+  </div>
+<% end %>

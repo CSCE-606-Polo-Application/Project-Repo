@@ -1,6 +1,6 @@
 class RidingSchedulesController < ApplicationController
   before_action :current_riding_schedule, only: [:show, :edit, :update, :destroy]
-
+  before_action :page_title
   def index
     @riding_schedules = RidingSchedule.all
   end
@@ -31,6 +31,10 @@ class RidingSchedulesController < ApplicationController
 
   def current_riding_schedule
     @riding_schedule = RidingSchedule.find(params[:id])
+  end
+
+  def page_title
+    @page_title = "Schedule"
   end
 
 end

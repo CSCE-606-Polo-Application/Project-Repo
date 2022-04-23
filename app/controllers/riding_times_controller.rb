@@ -1,6 +1,6 @@
 class RidingTimesController < ApplicationController
     before_action :current_riding_schedule
-
+    before_action :page_title
     def new
         @riding_time = RidingTime.new
         @members = Member.where.not(id: @riding_schedule.members.ids).collect { |m| [ m.std_first_name + " " + m.std_last_name, m.id ] }
@@ -30,6 +30,9 @@ class RidingTimesController < ApplicationController
         @riding_schedule = RidingSchedule.find(params[:riding_schedule_id])
     end
 
+    def page_title
+        @page_title = "Schedule"
+    end
 end
 
 

@@ -1,0 +1,28 @@
+<head>
+    <title>@page_title</title>
+    <%= stylesheet_link_tag 'contactUs' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Odia&display=swap" rel="stylesheet">
+  </head>
+
+<ul class="nav nav-tabs justify-content-center" id = "navbar-custom">
+      <li class="nav-item">
+        <a class="<%=if @page_title=="Home"; "nav-link active" ; else; "nav-link"; end%>" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class= "<%=if @page_title=="Members"; "nav-link active"; else; "nav-link"; end%>" href="/members">Members</a>
+      </li>
+      <li class="nav-item">
+        <a class= "<%=if @page_title=="Officers"; "nav-link active"; else; "nav-link"; end%>" href="/officers">Officers</a>
+      </li>
+      <li class="nav-item">
+        <a class= "<%=if @page_title=="The Herd"; "nav-link active"; else; "nav-link"; end%>" href="/horses">The Herd</a>
+      </li>
+      <li class="nav-item">
+        <a class= "<%=if @page_title=="Schedule"; "nav-link active"; else; "nav-link"; end%>" href="/riding_schedules">Schedule</a>
+      </li>
+      <li>
+        <a class = "<%=if @page_title=="Contact"; "nav-link active"; else; "nav-link"; end%>" href = "contacts/new">Contact</a>
+      </li>
+    </ul>

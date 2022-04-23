@@ -1,0 +1,2 @@
+class RidingSchedule < ApplicationRecord
+end

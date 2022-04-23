@@ -1,0 +1,20 @@
+<h1>Riding Schedules</h1>
+
+<%= link_to "Add a New Riding Schedule", new_riding_schedule_path %>
+
+<table class="table table-striped col-md-12" id="members">
+  <thead>
+    <tr>
+      <th>Riding Date & Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @riding_schedules.each do |riding_schedule| %>
+      <tr>
+        <td>
+            <%= riding_schedule.riding_date %> <%= riding_schedule.riding_time %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

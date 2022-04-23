@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_22_144045) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_22_223758) do
   create_table "horses", force: :cascade do |t|
     t.string "horse_name"
     t.string "brand_number"
@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_22_144045) do
     t.string "std_last_name"
     t.string "telephone"
     t.string "email"
+    t.text "riding_experience"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,17 +48,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_22_144045) do
     t.index ["member_id"], name: "index_riding_preferences_on_member_id"
   end
 
+  create_table "riding_schedules", force: :cascade do |t|
+    t.datetime "riding_datetime"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "riding_times", force: :cascade do |t|
-    t.date "riding_date"
-    t.time "riding_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "horse_id", null: false
-    t.integer "officer_id", null: false
     t.integer "member_id", null: false
+    t.integer "riding_schedule_id", null: false
     t.index ["horse_id"], name: "index_riding_times_on_horse_id"
     t.index ["member_id"], name: "index_riding_times_on_member_id"
-    t.index ["officer_id"], name: "index_riding_times_on_officer_id"
+    t.index ["riding_schedule_id"], name: "index_riding_times_on_riding_schedule_id"
   end
 
   add_foreign_key "officers", "members"
@@ -65,5 +70,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_22_144045) do
   add_foreign_key "riding_preferences", "members"
   add_foreign_key "riding_times", "horses"
   add_foreign_key "riding_times", "members"
-  add_foreign_key "riding_times", "officers"
+  add_foreign_key "riding_times", "riding_schedules"
 end

@@ -1,85 +1,52 @@
-<!DOCTYPE html>
+<div class="container-fluid h-100">
+  <div class="row align-items-center h-100" align="center">
+    <div class="col-sm-6 mx-auto border-right">
+      <div class="form-group" id = "form">
+        <p>Got a question? Fill out the form below!</p>
+        <%= form_for @contact do |f| %>
+          <div class="col-md-6">
+            <div id = "">
 
-<html>
+            </div>
+            <%= f.label :name, 'Full Name', {class: "form-label text-detail"} %></br>
+            <%= f.text_field  :name, required: true, class: "form-control", placeholder: "First and Last" %></br>
 
-  <head>
-    <title>Contact Us Page</title>
-    <%= stylesheet_link_tag 'contactUs' %>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anek+Odia&display=swap" rel="stylesheet">
-  </head>
+            <%= f.label :email, 'Email', {class: "form-label text-detail"}%></br>
+            <%= f.text_field :email, required: true, class: "form-control", placeholder: "name@example.com" %></br>
 
-  <body>
-    <ul class="nav nav-tabs justify-content-center" id = "navbar-custom">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">Members</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">Officers</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">Horses</a>
-      </li>
-      <li>
-        <a class = "nav-link active" href = "contacts/new">Contact</a>
-      </li>
-    </ul>
-    <div class="container-fluid h-100">
-      <div class="row align-items-center h-100" align="center">
-        <div class="col-sm-6 mx-auto border-right">
-          <div class="form-group" id = "form">
-            <p>Got a question? Fill out the form below!</p>
-            <%= form_for @contact do |f| %>
-              <div class="col-md-6">
-                <div id = "">
-
-                </div>
-                <%= f.label :name, 'Full Name', {class: "form-label text-detail"} %></br>
-                <%= f.text_field  :name, required: true, class: "form-control", placeholder: "First and Last" %></br>
-
-                <%= f.label :email, 'Email', {class: "form-label text-detail"}%></br>
-                <%= f.text_field :email, required: true, class: "form-control", placeholder: "name@example.com" %></br>
-
-                <%= f.label :message, 'Question', {class: "form-label text-detail"}%></br>
-                <%= f.text_area :message, rows: 4, cols: 40, required: true, class: "form-control",
-                                placeholder: "Enter your question here"%></br>
-                <div class= "d-none">
-                  <%= f.label :nickname %>
-                  <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
-                </div>
-                <%= f.submit 'Submit', class: 'btn btn-primary' %>
-              </div>
-            <% end %>
+            <%= f.label :message, 'Question', {class: "form-label text-detail"}%></br>
+            <%= f.text_area :message, rows: 4, cols: 40, required: true, class: "form-control",
+                            placeholder: "Enter your question here"%></br>
+            <div class= "d-none">
+              <%= f.label :nickname %>
+              <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
+            </div>
+            <%= f.submit 'Submit', class: 'btn btn-primary' %>
           </div>
+        <% end %>
+      </div>
+    </div>
+    <div class = "col-sm-6 mx-auto">
+      <div class = "contact-details" align="center">
+        <div id = "contact-1">
+          <p><b>Officer Name #1</b></p>
+          <p>(123)-456-7890</p>
+          <p><i>name@example.com</i></p>
         </div>
-        <div class = "col-sm-6 mx-auto">
-          <div class = "contact-details" align="center">
-            <div id = "contact-1">
-              <p><b>Officer Name #1</b></p>
-              <p>(123)-456-7890</p>
-              <p><i>name@example.com</i></p>
-            </div>
-            <hr>
-            <div id = "contact-2">
-              <p><b>Officer Name #2</b></p>
-              <p>(123)-456-7890</p>
-              <p><i>name@example.com</i></p>
-            </div>
+        <hr>
+        <div id = "contact-2">
+          <p><b>Officer Name #2</b></p>
+          <p>(123)-456-7890</p>
+          <p><i>name@example.com</i></p>
+        </div>
 
-            <div id = "social-links">
-              <a href="https://www.facebook.com/aggiepolo">Facebook</a>
-              <a href="https://www.instagram.com/tamupolo/">Instagram</a>
-            </div>
-          </div>
+        <div id = "social-links">
+          <a href="https://www.facebook.com/aggiepolo">Facebook</a>
+          <a href="https://www.instagram.com/tamupolo/">Instagram</a>
         </div>
       </div>
     </div>
-  </body>
-</html>
-
+  </div>
+</div>
 
 

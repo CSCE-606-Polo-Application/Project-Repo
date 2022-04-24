@@ -1,0 +1,32 @@
+<h1> <%= @member.std_first_name%> <%= @member.std_last_name%>'s Riding Preferences</h1>
+
+<table class="table table-striped col-md-12" id="riding_preferences">
+  <thead>
+    <tr>
+      <th>Preferred Horses</th>
+      <th>Available?</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @riding_preferences.each do |riding_preference| %>
+    <% horse = Horse.find(riding_preference.horse_id)%>
+    <tr>
+      <td>
+        <%= horse.horse_name %>
+      </td>
+      <td>
+        <%= horse.availability %>
+      </td>
+      <td>
+      <%= button_to 'Profile', horse_path(horse), method: 'get'%>
+      </td>
+      <td>
+      <%= button_to 'Edit', edit_horse_path(horse), method: 'get'%>
+      </td>
+      <td>
+      <%= button_to 'Remove Preference', member_riding_preference_path(riding_preference), method: 'delete', data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</tbody>
+</table>

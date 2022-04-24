@@ -1,5 +1,4 @@
 class Officer < ApplicationRecord
     belongs_to :member
-
-    validates :position , presence: true
+    has_many :riding_times, dependent: :destroy
 end

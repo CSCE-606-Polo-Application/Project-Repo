@@ -12,56 +12,56 @@ Member.create!([{
     std_first_name: "Whitney",
     std_last_name: "Walker",
     uin: "000000001",
-    telephone: "972-888-8888",
+    telephone: "(972)888-8888",
     email: "whitneywalker@tamu.edu"
 },
 {
     std_first_name: "Zak",
     std_last_name: "Coleman",
     uin: "000000002",
-    telephone: "979-999-9999",
+    telephone: "(979)999-9999",
     email: "zakdcoleman@tamu.edu" 
 },
 {
     std_first_name: "Yada",
     std_last_name: "Van Noort",
     uin: "000000003",
-    telephone: "979-777-7777",
+    telephone: "(979)777-7777",
     email: "yadavannoort@tamu.edu"
 },
 {
     std_first_name: "Anastasia",
     std_last_name: "Papin",
     uin: "000000004",
-    telephone: "214-666-6666",
+    telephone: "(214)666-6666",
     email: "apaps98@tamu.edu"
 },
 {
     std_first_name: "Madelyn",
     std_last_name: "Newland",
     uin: "000000005",
-    telephone: "572-555-5555",
+    telephone: "(572)555-5555",
     email: "madelynnewland@tamu.edu"
 },
 {
     std_first_name: "Olivia",
     std_last_name: "Reynolds",
     uin: "000000006",
-    telephone: "979-999-9999",
+    telephone: "(979)999-9999",
     email: "oliviareynolds@tamu.edu" 
 },
 {
     std_first_name: "Taylor",
     std_last_name: "Lopez",
     uin: "000000007",
-    telephone: "979-999-9999",
+    telephone: "(979)999-9999",
     email: "taylo916@tamu.edu" 
 },
 {
     std_first_name: "Alex",
     std_last_name: "Rivera",
     uin: "000000008",
-    telephone: "979-999-9999",
+    telephone: "(979)999-9999",
     email: "airivera@tamu.edu" 
 }])
 
@@ -98,8 +98,8 @@ Horse.create!([{
     availability: true
 },
 {
-    horse_name: "Marley",
-    brand_number: "7",
+    horse_name: "Ivy",
+    brand_number: "8",
     availability: false
 },
 {
@@ -108,19 +108,9 @@ Horse.create!([{
     availability: true
 },
 {
-    horse_name: "Pajarita",
-    brand_number: "10",
-    availability: false
-},
-{
-    horse_name: "Carta",
-    brand_number: "11",
-    availability: false
-},
-{
     horse_name: "Flash",
     brand_number: "12",
-    availability: false
+    availability: true
 },
 {
     horse_name: "Pepsi",
@@ -133,7 +123,7 @@ Horse.create!([{
     availability: true
 },
 {
-    horse_name: "Fea",
+    horse_name: "Santa Fea",
     brand_number: "19",
     availability: true
 },
@@ -149,7 +139,7 @@ Horse.create!([{
 },
 {
     horse_name: "Natasha",
-    brand_number: "26",
+    brand_number: "29",
     availability: true
 },
 {
@@ -223,24 +213,24 @@ RidingPreference.create!([{
 
 RidingTime.destroy_all
 
-# RidingTime.create!([{
-#     member_id: 4 ,
-#     horse_id: 8 ,
-#     officer_id: 3,
-#     riding_date: "2022-03-23",
-#     riding_time: "18:00"
-# },
-# {
-#     member_id: 5,
-#     horse_id: 8,
-#     officer_id: 3,
-#     riding_date: "2022-03-23",
-#     riding_time: "19:00"
-# },
-# {
-#     member_id: 2,
-#     horse_id: 3,
-#     officer_id: 3,
-#     riding_date: "2022-03-23",
-#     riding_time: "20:00"
-# }])
+RidingTime.create!([{
+    member_id: 4 ,
+    horse_id: 8 ,
+    officer_id: 3,
+    riding_date: "2022-03-23",
+    riding_time: "18:00"
+},
+{
+    member_id: 5,
+    horse_id: 8,
+    officer_id: 3,
+    riding_date: "2022-03-23",
+    riding_time: "19:00"
+},
+{
+    member_id: 2,
+    horse_id: 3,
+    officer_id: 3,
+    riding_date: "2022-03-23",
+    riding_time: "20:00"
+}])

@@ -1,9 +1,0 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  riding_date: 2022-04-22
-  riding_time: 2022-04-22 17:37:49
-
-two:
-  riding_date: 2022-04-22
-  riding_time: 2022-04-22 17:37:49

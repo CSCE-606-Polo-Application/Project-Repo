@@ -1,6 +1,4 @@
 class ContactsController < ApplicationController
-  before_action :page_title
-  
   def new
     @contact = Contact.new
   end
@@ -14,11 +12,5 @@ class ContactsController < ApplicationController
       flash.now[:error] = 'Could not send message'
       render :new
     end
-  end
-
-  private
-
-  def page_title
-    @page_title = "Contact"
   end
 end

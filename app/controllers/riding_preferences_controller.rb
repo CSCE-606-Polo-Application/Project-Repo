@@ -8,6 +8,7 @@ class RidingPreferencesController < ApplicationController
   end
 
   def create
+    puts riding_preference_params
     riding_preference = RidingPreference.create(riding_preference_params)
     redirect_to member_path(@member)
   end

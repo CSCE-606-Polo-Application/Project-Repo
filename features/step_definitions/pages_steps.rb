@@ -9,4 +9,3 @@ Given('I am on the home page') do
   Then('I should not see {string}') do |string|
     expect(page.has_content?(string)).to eq(false)
   end
-

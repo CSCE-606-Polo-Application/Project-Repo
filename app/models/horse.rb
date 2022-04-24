@@ -5,6 +5,6 @@ class Horse < ApplicationRecord
 
     validates :horse_name , presence: true 
     validates :brand_number , presence: true , numericality: { only_integer: true }
-    validates :availability , presence: true
+    
     
 end

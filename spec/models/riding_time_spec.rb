@@ -1,9 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe RidingTime, type: :model do
-    it 'is valid with valid attributes'
-    it 'is not valid without a riding time'
-    it 'is nto valid without a riding date'
+    it 'is valid with valid attributes' do 
+    end
+    it 'is not valid without a riding time' do
+        
+    end
+    it 'is nto valid without a riding date' do
+        
+    end
 
     describe 'Associations' do 
         it 'should belong to the members model' do

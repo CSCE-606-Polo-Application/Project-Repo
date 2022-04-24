@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   before_action :current_member, only: [:show, :edit, :update, :destroy]
-
+  before_action :page_title
   def index
     @members = Member.all
   end
@@ -47,4 +47,9 @@ class MembersController < ApplicationController
   def current_member
     @member = Member.find(params[:id])
   end
+
+  def page_title
+    @page_title = "Members"
+  end
+
 end

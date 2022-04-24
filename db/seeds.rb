@@ -98,8 +98,8 @@ Horse.create!([{
     availability: true
 },
 {
-    horse_name: "Ivy",
-    brand_number: "8",
+    horse_name: "Marley",
+    brand_number: "7",
     availability: false
 },
 {
@@ -108,9 +108,14 @@ Horse.create!([{
     availability: true
 },
 {
+    horse_name: "Carta",
+    brand_number: "11",
+    availability: false
+},
+{
     horse_name: "Flash",
     brand_number: "12",
-    availability: true
+    availability: false
 },
 {
     horse_name: "Pepsi",
@@ -123,7 +128,7 @@ Horse.create!([{
     availability: true
 },
 {
-    horse_name: "Santa Fea",
+    horse_name: "Fea",
     brand_number: "19",
     availability: true
 },
@@ -139,7 +144,7 @@ Horse.create!([{
 },
 {
     horse_name: "Natasha",
-    brand_number: "29",
+    brand_number: "26",
     availability: true
 },
 {
@@ -213,24 +218,24 @@ RidingPreference.create!([{
 
 RidingTime.destroy_all
 
-RidingTime.create!([{
-    member_id: 4 ,
-    horse_id: 8 ,
-    officer_id: 3,
-    riding_date: "2022-03-23",
-    riding_time: "18:00"
-},
-{
-    member_id: 5,
-    horse_id: 8,
-    officer_id: 3,
-    riding_date: "2022-03-23",
-    riding_time: "19:00"
-},
-{
-    member_id: 2,
-    horse_id: 3,
-    officer_id: 3,
-    riding_date: "2022-03-23",
-    riding_time: "20:00"
-}])
+# RidingTime.create!([{
+#     member_id: 4 ,
+#     horse_id: 8 ,
+#     officer_id: 3,
+#     riding_date: "2022-03-23",
+#     riding_time: "18:00"
+# },
+# {
+#     member_id: 5,
+#     horse_id: 8,
+#     officer_id: 3,
+#     riding_date: "2022-03-23",
+#     riding_time: "19:00"
+# },
+# {
+#     member_id: 2,
+#     horse_id: 3,
+#     officer_id: 3,
+#     riding_date: "2022-03-23",
+#     riding_time: "20:00"
+# }])

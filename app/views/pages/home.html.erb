@@ -3,10 +3,13 @@
 <table class="table table-striped col-md-12" id="homepage">
   <thead>
     <tr>
-      <th>  <%=link_to "Members",members_url %> </th>
-      <th>  <%=link_to "Officers",officers_url %> </th>
-      <th>  <%=link_to "The Herd",horses_url %> </th>
-      <th>  <%=link_to "Contact Us", 'contacts/new'%></th>
+      <% if user_signed_in? %>
+        <th>  <%=link_to "Edit Password",edit_user_registration_path %> </th>
+        <th>  <%=button_to "Log out", destroy_user_session_path, :method => :delete %> </th>
+      <% else %>
+        <th>  <%=link_to "Sign-Up",new_user_registration_path %> </th>
+        <th>  <%=link_to "Sign-In",new_user_session_path %> </th>
+      <% end %>
     </tr>
   </thead>
   <tbody>

@@ -9,26 +9,22 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
+  <%= render "layouts/navbar" %>
+
+  
   <body>
     <header style="width: 1200px; margin: 0 auto;">
       <% flash.each do |message_type, message| %>
         <div class="<%= message_type %>"><%= message %></div>
       <% end %>
-      <ul>
-        <% if user_signed_in? %>
-          <li><%= link_to "My Account", account_path %></li>
-           <li><%= button_to "Logout", logout_path, method: :delete %></li>
-        <% else %>
-           <li><%= link_to "Login", login_path %></li>
-           <li><%= link_to "Sign Up", sign_up_path %></li>
-           <li><%= link_to "Forgot my password", new_password_path %></li>
-           <li><%= link_to "Didn't receive confirmation instructions", new_confirmation_path %></li>
-        <% end %>
-      </ul>
-      <hr/>
-    </header>
-    <main style="width: 1200px; margin: 0 auto;"> 
-      <%= yield %>
-    </main>
+    </div>
+    <div>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+    </div>
+
+    <%= yield %>
   </body>
 </html>

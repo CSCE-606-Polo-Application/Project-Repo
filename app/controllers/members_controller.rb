@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   before_action :current_member, only: [:show, :edit, :update, :destroy]
-
+  before_action :page_title
   def index
     @members = Member.all
   end
@@ -15,7 +15,11 @@ class MembersController < ApplicationController
 
   def create 
     member = Member.create(member_params)
-    redirect_to member_path(member)
+    if (member.valid?) 
+      redirect_to member_path(member)
+    else
+      redirect_to new_member_path
+    end
   end
 
   def edit
@@ -37,10 +41,15 @@ class MembersController < ApplicationController
   private
 
   def member_params
-    params.require(:member).permit(:std_first_name,:std_last_name,:telephone,:email,:uin)
+    params.require(:member).permit(:std_first_name,:std_last_name,:telephone,:email,:uin,:riding_experience)
   end
 
   def current_member
     @member = Member.find(params[:id])
   end
+
+  def page_title
+    @page_title = "Members"
+  end
+
 end

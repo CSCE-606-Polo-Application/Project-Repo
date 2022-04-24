@@ -1,4 +1,6 @@
 class HorsesController < ApplicationController
+  before_action :page_title
+  
   def index
     @horses = Horse.all
   end
@@ -18,7 +20,11 @@ class HorsesController < ApplicationController
 
   def create 
     horse = Horse.create(horse_params)
-    redirect_to horse_path(horse)
+    if horse.valid?
+      redirect_to horse_path(horse)
+    else
+      redirect_to new_horse_path
+    end
   end
 
   def update
@@ -40,5 +46,9 @@ class HorsesController < ApplicationController
 
   def horse_params
     params.require(:horse).permit(:horse_name,:brand_number,:availability,:description)
+  end
+
+  def page_title
+    @page_title = "The Herd"
   end
 end

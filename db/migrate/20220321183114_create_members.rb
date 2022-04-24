@@ -6,6 +6,7 @@ class CreateMembers < ActiveRecord::Migration[7.0]
       t.string :std_last_name
       t.string :telephone
       t.string :email
+      t.text :riding_experience
 
       t.timestamps
     end

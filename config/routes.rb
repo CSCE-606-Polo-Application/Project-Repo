@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'pages/home'
   get 'riding_preferences/index'
   get 'officers/index'
@@ -14,12 +15,9 @@ Rails.application.routes.draw do
   resources :riding_schedules do
     resources :riding_times
   end
+
+  resources :contacts, only: [:new, :create]
   # Defines the root path route ("/")
   root "pages#home"
-end
-
-Rails.application.routes.draw do
-  resources :members
-  resources :contacts, only: [:new, :create]
 end
 

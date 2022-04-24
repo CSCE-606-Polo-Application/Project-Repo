@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ProjectRepoUmlbased</title>
+    <title>RailsAuthenticationFromScratch</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
 
@@ -14,9 +14,9 @@
 
   
   <body>
-    <div class = "container">
-      <% flash.each do |key, message| %>
-        <p class="alert alert-<%= key %>"><%= message %></p>
+    <header style="width: 1200px; margin: 0 auto;">
+      <% flash.each do |message_type, message| %>
+        <div class="<%= message_type %>"><%= message %></div>
       <% end %>
     </div>
     <div>

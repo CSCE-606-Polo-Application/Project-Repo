@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema[7.0].define(version: 2022_04_24_000218) do
   create_table "horses", force: :cascade do |t|
     t.string "horse_name"
@@ -75,6 +76,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_24_000218) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "confirmed_at", precision: nil
+    t.string "password_digest", null: false
+    t.string "unconfirmed_email"
+    t.string "remember_token", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["remember_token"], name: "index_users_on_remember_token", unique: true
   end
 
   add_foreign_key "officers", "members"

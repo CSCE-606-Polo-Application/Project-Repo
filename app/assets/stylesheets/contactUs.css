@@ -1,0 +1,41 @@
+html, body {
+    height: 100%;
+}
+
+body > .container-fluid > .row {
+    background-color: #F5F5F5;
+}
+
+#navbar-custom {
+    background-color: #500000;
+}
+
+.nav > li > a {
+    color: #FFFFFF;
+}
+#contact-1 {
+    font-family: 'Anek Odia', Sans-Serif;
+}
+
+#contact-2 {
+    font-family: 'Anek Odia', Sans-Serif;
+}
+
+#social-links {
+    padding-top: 15px;
+    font-family: 'Anek Odia', Sans-Serif;
+}
+
+#social-links > a {
+    padding-right: 10px;
+}
+
+#form > p {
+    font-family: 'Anek Odia', Sans-Serif;
+    font-size: 20px;
+}
+
+.text-detail {
+    font-family: 'Anek Odia', Sans-Serif;
+    font-weight: bold;
+}

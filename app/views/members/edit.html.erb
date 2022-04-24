@@ -1,0 +1,40 @@
+<h3>Update Member Details</h3>
+<%=print @member %>
+<%= form_with model: @member do |form| %>
+  <div>
+  <%= form.label :uin %><br>
+  <%= form.text_field :uin, placeholder: "UIN" %>
+  </div>
+
+  <div>
+  <%= form.label :First_Name %><br>
+  <%= form.text_field :std_first_name, placeholder: "First Name" %>
+  </div>
+
+  <div>
+  <%= form.label :Last_Name %><br>
+  <%= form.text_field :std_last_name, placeholder: "Last Name" %>
+  </div>
+
+  <div>
+  <%= form.label :Telephone %><br>
+  <%= form.text_field :telephone, placeholder: "Phone Number" %>
+  </div>
+
+  <div>
+  <%= form.label :Email_Address %><br>
+  <%= form.text_field :email, placeholder: "Email Address" %>
+  </div>
+
+  <div>
+    <%= form.label :Riding_Experience %><br>
+    <%= form.text_area :riding_experience, placeholder: @member.riding_experience, size: "40x3" %>
+  </div>
+  
+  <div>
+  <%= form.submit %>
+  </div>
+<% end %>
+<%= render "members/backmember" %>
+<%= render "pages/backhome" %>
+

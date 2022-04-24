@@ -1,0 +1,10 @@
+
+  <tr>
+    <td>
+      <%= riding_preference.horse.horse_name %>
+    </td>
+    <td>
+        <%= button_to 'Remove', member_riding_preference_path(@member,riding_preference), method: 'delete', data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+

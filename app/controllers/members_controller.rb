@@ -14,9 +14,9 @@ class MembersController < ApplicationController
   end
 
   def create 
-    member = Member.create(member_params)
-    if (member.valid?) 
-      redirect_to member_path(member)
+    new_member = Member.create(member_params)
+    if (new_member.valid?)
+      redirect_to member_path(new_member.id)
     else
       redirect_to new_member_path
     end
@@ -26,6 +26,9 @@ class MembersController < ApplicationController
 
   end
 
+  def dashboard
+    @member = Member.find(params[:id])
+  end
   def update
     @member.update(member_params)
 

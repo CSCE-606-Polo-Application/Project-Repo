@@ -1,19 +1,53 @@
-<h1>Welcome to the TAMU Polo Club</h1>
+<html lang="en">
+  <head>
+    <title>Home Page</title>
+    <%stylesheet_link_tag 'homePage'%>
+  </head>
 
-<table class="table table-striped col-md-12" id="homepage">
-  <thead>
-    <tr>
-      <% if user_signed_in? %>
-        <th>  <%=link_to "Edit Password",edit_user_registration_path %> </th>
-        <th>  <%=button_to "Log out", destroy_user_session_path, :method => :delete %> </th>
-      <% else %>
-        <th>  <%=link_to "Sign-Up",new_user_registration_path %> </th>
-        <th>  <%=link_to "Sign-In",new_user_session_path %> </th>
-      <% end %>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
+  <body>
+    <div class = "container-fluid h-100">
+      <div class = "row">
+        <div class = "border col-md-9">
+          <%= image_tag "tamu-polo.jpg", height: 350, class: "rounded mx-auto d-block landing-image" %>
+        </div>
+        <div class = "border col-md-3">
+          <table class="table table-striped col-md-12" id="homepage">
+            <thead>
+            <tr>
+              <% if user_signed_in? %>
+                <th>  <%=link_to "Edit Password",edit_user_registration_path %> </th>
+                <th>  <%=button_to "Log out", destroy_user_session_path, :method => :delete %> </th>
+              <% else %>
+                <th>  <%=link_to "Sign-Up",new_user_registration_path %> </th>
+                <th>  <%=link_to "Sign-In",new_user_session_path %> </th>
+              <% end %>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "border col-md-9">
+        <h3>About Us</h3>
+        <p>The Texas A&M Polo club, founded in 1967, assists both men and women in learning and refining the basic skills of polo so that they can compete at a local, regional, and national level.
+          Intra-club games are scheduled to provide experience for novice members.
+          The club has a string of about twenty polo ponies, so owning a horse is not a prerequisite for membership.
+          All members are expected to assist in the daily care and feeding of the club’s ponies.</p>
 
+        <p>The club is dedicated to introducing polo to anyone interested in learning about the “Sport of Kings,”
+          producing winning athletes,
+          and striving to win the coveted USPA Intercollegiate National Championship.</p>
 
+        <p>
+          The Texas A&M Polo Club is a part of Texas A&M Rec Sports and is advised by Keith Joseph.
+        </p>
+      </div>
+        <div class = "border col-md-3">
+        Socials!
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

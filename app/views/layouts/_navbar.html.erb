@@ -13,7 +13,7 @@
         </li>
 
         <li class="nav-item">
-        <a class="<%=if @page_title=="Home"; "nav-link active" ; else; "nav-link"; end%>" href="/member_dashboard">Home</a>
+        <a class="<%=if @page_title=="Home"; "nav-link active" ; else; "nav-link"; end%>" href="/member_dashboard/<%=String(session[:user_id])%>">Home</a>
        </li>
       <!--
         <li class="nav-item">

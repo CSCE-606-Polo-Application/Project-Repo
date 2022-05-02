@@ -28,7 +28,9 @@ class MembersController < ApplicationController
 
   def dashboard
     @member = Member.find(params[:id])
+    session[:user_id]=params[:id]
   end
+
   def update
     @member.update(member_params)
 

@@ -1,0 +1,9 @@
+#title {
+    font-family: 'Lora', serif;
+    font-size: 32px;
+}
+
+
+body > .container-fluid {
+    background-color: #FFFFFF !important;
+}

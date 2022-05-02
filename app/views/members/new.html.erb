@@ -1,11 +1,50 @@
-<h3>Create a Member</h3>
-<%= form_with model: @member do |form| %>
-  <%= form.text_field :uin, placeholder: "UIN" %>
-  <%= form.text_field :std_first_name, placeholder: "First Name" %>
-  <%= form.text_field :std_last_name, placeholder: "Last Name" %>
-  <%= form.text_field :telephone, placeholder: "Phone Number" %>
-  <%= form.text_field :email, placeholder: "Email Address" %>
-  <%= form.submit %>
-<% end %>
-<%= render "members/backmember" %>
-<%= render "pages/backhome" %>
+<html lang="en">
+  <head>
+    <title>Profile Creation Page</title>
+    <%= stylesheet_link_tag 'profile_page' %>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+    </style>
+  </head>
+
+  <body>
+    <div class = "container-fluid text-center">
+      <h3 id="title">Howdy! Fill out your profile below: </h3>
+      <br>
+      <div class = "row justify-content-center text-center">
+        <%= form_with model: @member do |form| %>
+          <div class = "form-group">
+            <b><%= form.label :uin, 'UIN' %></b>
+            <br>
+            <%= form.text_field :uin, placeholder: "UIN" %>
+          </div>
+          <div class = "form-group">
+            <b><%= form.label :std_first_name, 'First Name' %></b>
+            <br>
+            <%= form.text_field :std_first_name, placeholder: "First Name" %>
+          </div>
+          <div class = "form-group">
+            <b><%= form.label :std_last_name, 'Last Name' %></b>
+            <br>
+            <%= form.text_field :std_last_name, placeholder: "Last Name" %>
+          </div>
+          <div class = "form-group">
+            <b><%= form.label :telephone, 'Phone Number' %></b>
+            <br>
+            <%= form.text_field :telephone, placeholder: "Phone Number" %>
+          </div>
+          <div class = "form-group">
+            <b><%= form.label :email, ' Re-enter Email' %></b>
+            <br>
+            <%= form.text_field :email, placeholder: "Email Address" %>
+          </div>
+          <%= form.submit %>
+        <% end %>
+      </div>
+    </div>
+  </body>
+</html>
+
+<% # <%= render "members/backmember" %>
+<% # render "pages/backhome" %>
+

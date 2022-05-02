@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {registrations: "registrations"}
   get 'pages/home'
   get 'riding_preferences/index'
   get 'officers/index'
   get 'members/index'
   get 'contacts/new'
+
+  get '/member_dashboard/:id', to: "members#dashboard", as: 'member'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :horses, :officers
 

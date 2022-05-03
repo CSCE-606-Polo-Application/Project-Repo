@@ -8,7 +8,9 @@
         <th>Last Name</th>
         <th>Telephone</th>
         <th>Email</th>
+        <% if user_signed_in? && session[:isOfficer] %>
         <th>UIN</th>
+        <% end%>
     </tr>
   </thead>
   <tbody>
@@ -29,13 +31,17 @@
         <td>
           <%= officer.member.email %>
         </td>
+        <% if user_signed_in? && session[:isOfficer] %>
         <td>
           <%= officer.member.uin %>
         </td>
+        <td>
+        <%= link_to 'Remove', officer_path(officer), method: 'delete', data: { confirm: 'Are you sure?' } %>
+        </td>
+        <% end%>
       </tr>
     <% end %>
   </tbody>
 </table>
 Officer count:  <%= @officers.length %>
 
-<%= render "pages/backhome" %>

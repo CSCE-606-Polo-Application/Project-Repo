@@ -9,8 +9,10 @@
     <td>
       <%= riding_time.horse.brand_number %>
     </td>
+    <% if user_signed_in? && session[:isOfficer] %>
     <td>
     <%= button_to 'Remove', riding_schedule_riding_time_path(@riding_schedule,riding_time), method: 'delete', data: { confirm: 'Are you sure?' } %>
     </td>
+    <% end%>
   </tr>
 

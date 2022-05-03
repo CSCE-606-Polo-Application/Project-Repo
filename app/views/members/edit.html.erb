@@ -20,21 +20,23 @@
   <%= form.label :Telephone %><br>
   <%= form.text_field :telephone, placeholder: "Phone Number" %>
   </div>
-
+  <% if user_signed_in? && session[:isOfficer] %>
   <div>
   <%= form.label :Email_Address %><br>
   <%= form.text_field :email, placeholder: "Email Address" %>
   </div>
-
+  <% end%>
   <div>
     <%= form.label :Riding_Experience %><br>
     <%= form.text_area :riding_experience, placeholder: @member.riding_experience, size: "40x3" %>
   </div>
-  
+  <%= hidden_field_tag :user, @user %>
   <div>
   <%= form.submit %>
   </div>
 <% end %>
+<% if user_signed_in? & session[:isOfficer] %>
+<%= link_to "Make an Officer", new_officer_path %>
 <%= render "members/backmember" %>
-<%= render "pages/backhome" %>
+<% end%>
 

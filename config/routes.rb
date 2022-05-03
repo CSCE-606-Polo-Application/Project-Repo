@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'contacts/new'
 
   get '/member_dashboard/:id', to: "members#dashboard", as: 'member'
+  patch '/member_dashboard/:id', to: "members#update"
+  delete '/member_dashboard/:id', to: "members#destroy", as: 'officer'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :horses, :officers
 

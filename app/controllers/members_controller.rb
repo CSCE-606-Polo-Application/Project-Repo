@@ -28,13 +28,17 @@ class MembersController < ApplicationController
 
   def dashboard
     @member = Member.find(params[:id])
-    session[:user_id]=params[:id]
+    @join_date = @member.created_at.strftime("%m/%d/%Y")
+    @page_title = "Home"
   end
 
   def update
     @member.update(member_params)
-
-    redirect_to member_path(@member)
+    if session[:isOfficer]
+      redirect_to members_path
+    else
+      redirect_to member_path(session[:user_id])
+    end 
   end
 
   def destroy

@@ -46,17 +46,16 @@
 <table class="table table-striped col-md-12" id="navigation">
   <tbody>
     <tr>
+    <% if user_signed_in? && session[:isOfficer] %>
       <td>
         <%= button_to 'Edit', edit_horse_path(@horse), method: 'get'%>
       </td>
       <td>
         <%= button_to 'Delete', horse_path(@horse), method: 'delete', data: { confirm: 'Are you sure?' } %>
       </td>
+    <% end %>
       <td>
       <%= render "horses/backhorse" %>
-      </td>
-      <td>
-      <%= render "pages/backhome" %>
       </td>
     </tr>
   </tbody>

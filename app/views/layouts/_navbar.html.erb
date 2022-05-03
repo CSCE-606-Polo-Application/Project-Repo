@@ -7,7 +7,7 @@
   </head>
 
 <ul class="nav nav-tabs justify-content-center" id = "navbar-custom">
-      <% if user_signed_in? %>
+      <% if user_signed_in? && session[:isOfficer] %>
         <li class="nav-item">
         <a class= "<%=if @page_title=="Schedule"; "nav-link active"; else; "nav-link"; end%>" href="/riding_schedules">Schedule</a>
         </li>
@@ -15,11 +15,9 @@
         <li class="nav-item">
         <a class="<%=if @page_title=="Home"; "nav-link active" ; else; "nav-link"; end%>" href="/member_dashboard/<%=String(session[:user_id])%>">Home</a>
        </li>
-      <!--
         <li class="nav-item">
         <a class= "<%=if @page_title=="Members"; "nav-link active"; else; "nav-link"; end%>" href="/members">Members</a>
        </li>
-        -->
         <li class="nav-item">
         <a class= "<%=if @page_title=="Officers"; "nav-link active"; else; "nav-link"; end%>" href="/officers">Officer Info</a>
         </li>
@@ -31,20 +29,31 @@
         <a class = "<%=if @page_title=="Contact"; "nav-link active"; else; "nav-link"; end%>" href ="/contacts/new">Contact</a>
         </li>
         -->
-      <% else %>
+      <% elsif user_signed_in?%>
+          
+      <li class="nav-item">
+      <a class= "<%=if @page_title=="Schedule"; "nav-link active"; else; "nav-link"; end%>" href="/riding_schedules">Schedule</a>
+      </li>
 
+      <li class="nav-item">
+      <a class="<%=if @page_title=="Home"; "nav-link active" ; else; "nav-link"; end%>" href="/member_dashboard/<%=String(session[:user_id])%>">Home</a>
+     </li>
+      <li class="nav-item">
+      <a class= "<%=if @page_title=="Officers"; "nav-link active"; else; "nav-link"; end%>" href="/officers">Officer Info</a>
+      </li>
+      <li class="nav-item">
+      <a class= "<%=if @page_title=="The Herd"; "nav-link active"; else; "nav-link"; end%>" href="/horses">The Herd</a>
+     </li>
+
+     <% else%>
       <li class="nav-item">
         <a class="<%=if @page_title=="Home"; "nav-link active" ; else; "nav-link"; end%>" href="/">Home</a>
       </li>
-      <li class="nav-item">
-        <a class= "<%=if @page_title=="Members"; "nav-link active"; else; "nav-link"; end%>" href="/members">Members</a>
-      </li>
-      <li class="nav-item">
-        <a class= "<%=if @page_title=="Officers"; "nav-link active"; else; "nav-link"; end%>" href="/officers">Officers</a>
-      </li>
+      <!--
       <li class="nav-item">
         <a class= "<%=if @page_title=="The Herd"; "nav-link active"; else; "nav-link"; end%>" href="/horses">The Herd</a>
       </li>
+      -->
       <li class="nav-item">
         <a class = "<%=if @page_title=="Contact"; "nav-link active"; else; "nav-link"; end%>" href ="/contacts/new">Contact</a>
       </li>

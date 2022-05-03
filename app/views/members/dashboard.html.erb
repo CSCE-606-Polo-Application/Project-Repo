@@ -10,3 +10,63 @@
             </thead>
         </table>
 </div>
+
+<table class="table table-striped col-md-12" id="details" width="370" border="1">
+  <tbody>
+    <tr>
+      <td width="15%">
+      Member Since:
+      </td>
+      <td width="85%">
+      <%= @join_date %>
+      </td>
+    </tr>
+    <tr>
+      <td width="15%">
+      UIN:
+      </td>
+      <td width="85%">
+      <%= @member.uin %>
+      </td>
+    </tr>
+    <tr>
+      <td width="15%">
+      Telephone:
+      </td>
+      <td width="85%">
+      <%= @member.telephone %>
+      </td>
+    </tr>
+    <tr>
+      <td width="15%">
+      Email Address:
+      </td>
+      <td width="85%">
+      <%= @member.email %>
+      </td>
+    </tr>
+    <tr>
+      <td width="15%">
+      Riding Experience:
+      </td>
+      <td width="85%">
+      <%= @member.riding_experience %>
+      </td>
+    </tr>
+  </tbody>  
+</table>
+
+<table class="table table-striped col-md-12" id="members">
+<thead>
+  <tr>
+    <th>Preferred Horses</th>
+    <th>Add/Remove</th>
+  </tr>
+</thead>
+<tbody>
+    <%= render @member.riding_preferences %>
+</tbody>
+</table>
+
+<%= button_to 'Add Preferred Horse', new_member_riding_preference_path(@member), method: 'get'%>
+<%= button_to 'Edit Member', edit_member_path(@member), method: 'get'%>

@@ -5,6 +5,7 @@ class RidingTimesController < ApplicationController
         @riding_time = RidingTime.new
         @members = Member.where.not(id: @riding_schedule.members.ids).collect { |m| [ m.std_first_name + " " + m.std_last_name, m.id ] }
         @horses = Horse.where.not(availability: false).where.not(id: @riding_schedule.horses.ids).collect { |h| [ h.horse_name, h.id ] }
+        @signed_in_member = Member.where(id: session[:user_id]).collect { |m| [ m.std_first_name + " " + m.std_last_name, m.id ] }
     end
 
     def create

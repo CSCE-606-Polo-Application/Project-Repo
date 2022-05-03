@@ -1,6 +1,5 @@
 <h1>Riding Schedules</h1>
 
-<%= link_to "Add a New Riding Schedule", new_riding_schedule_path %>
 
 <table class="table table-striped col-md-12" id="riding times">
   <thead>
@@ -21,4 +20,7 @@
     <% end %>
   </tbody>
 </table>
+<% if user_signed_in? && session[:isOfficer] %>
+<%= link_to "Add a New Riding Schedule", new_riding_schedule_path %>
+<% end%>
 

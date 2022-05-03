@@ -48,7 +48,9 @@
     <% end %>
   </tbody>
 </table>
+<% if user_signed_in? && session[:isOfficer] %>
 <%= link_to "Add a New Horse", new_horse_path %>
+<% end %>
 
 <div>
   Horse count:  <%= @horses.length %>

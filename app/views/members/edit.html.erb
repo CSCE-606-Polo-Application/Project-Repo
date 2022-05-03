@@ -36,6 +36,7 @@
   </div>
 <% end %>
 <% if user_signed_in? & session[:isOfficer] %>
+<%= link_to "Make an Officer", new_officer_path %>
 <%= render "members/backmember" %>
 <% end%>
 

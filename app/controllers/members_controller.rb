@@ -16,6 +16,8 @@ class MembersController < ApplicationController
   def create 
     new_member = Member.create(member_params)
     if (new_member.valid?)
+      session[:user_id] = new_member.id
+      session[:isOfficer]=false
       redirect_to member_path(new_member.id)
     else
       redirect_to new_member_path

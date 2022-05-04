@@ -49,6 +49,7 @@ class HorsesController < ApplicationController
   end
 
   def page_title
+    #This defines the page title so the navbar can activate the correct tab
     @page_title = "The Herd"
   end
 end

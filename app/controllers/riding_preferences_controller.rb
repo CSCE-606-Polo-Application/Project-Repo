@@ -3,6 +3,7 @@ class RidingPreferencesController < ApplicationController
 
   def new
     @riding_preference = RidingPreference.new
+    #Generates a list of horses that are not already one of this member's preferred horses
     @horses = Horse.where.not(id: @member.horses.ids).collect { |h| [ h.horse_name, h.id ] }
 
   end

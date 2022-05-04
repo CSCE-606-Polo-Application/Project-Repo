@@ -16,6 +16,8 @@ class MembersController < ApplicationController
   def create 
     new_member = Member.create(member_params)
     if (new_member.valid?)
+      #When a user is first created, their id and member status is saved to the session variable so 
+      #views will only show their correct level of access
       session[:user_id] = new_member.id
       session[:isOfficer]=false
       redirect_to member_path(new_member.id)
@@ -29,6 +31,7 @@ class MembersController < ApplicationController
   end
 
   def dashboard
+    #controller function for the member dashboard
     @member = Member.find(params[:id])
     @join_date = @member.created_at.strftime("%m/%d/%Y")
     @page_title = "Home"
@@ -36,6 +39,8 @@ class MembersController < ApplicationController
 
   def update
     @member.update(member_params)
+    #After a member is updated, the user is redirected to the members index path if they are an officer
+    #Otherwise, they go to their own member dashboard since they will edited their own profile
     if session[:isOfficer]
       redirect_to members_path
     else
@@ -60,6 +65,7 @@ class MembersController < ApplicationController
   end
 
   def page_title
+    #This defines the page title so the navbar can activate the correct tab
     @page_title = "Members"
   end
 

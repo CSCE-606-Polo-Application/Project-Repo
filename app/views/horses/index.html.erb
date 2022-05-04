@@ -26,8 +26,8 @@
         <td>
         <%= button_to 'Profile', horse_path(horse), method: 'get'%>
         </td>
-        <td>
         <% if user_signed_in? && session[:isOfficer] %>
+        <td>
         <%= button_to 'Edit', edit_horse_path(horse), method: 'get'%>
         </td>
         <td>

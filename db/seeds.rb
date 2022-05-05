@@ -222,41 +222,49 @@ User.destroy_all
 
 User.create!([
     {
+        member_id: 1,
         email: "whitneywalker@tamu.edu",
         password: "Password",
         password_confirmation: "Password",
     },
     {
+        member_id: 2,
         email: "zakdcoleman@tamu.edu",
         password: "Password",
         password_confirmation: "Password",
     },
     {
+        member_id: 3,
         email: "yadavannoort@tamu.edu",
         password: "Password",
         password_confirmation: "Password",
     },
     {
+        member_id: 4,
         email: "apaps98@tamu.edu",
         password: "Password",
         password_confirmation: "Password",
     },
     {
+        member_id: 5,
         email: "madelynnewland@tamu.edu",
         password: "Password",
         password_confirmation: "Password",
     },
     {
+        member_id: 6,
         email: "oliviareynolds@tamu.edu",
         password: "Password",
         password_confirmation: "Password",
     },
     {
+        member_id: 7,
         email: "taylo916@tamu.edu",
         password: "Password",
         password_confirmation: "Password",
     },
     {
+        member_id: 8,
         email: "airivera@tamu.edu",
         password: "Password",
         password_confirmation: "Password",

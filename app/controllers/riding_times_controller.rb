@@ -3,8 +3,12 @@ class RidingTimesController < ApplicationController
     before_action :page_title
     def new
         @riding_time = RidingTime.new
+        #Generates a list of members and horses who are not signed up for the current event so an officer can
+        #Sign them up
         @members = Member.where.not(id: @riding_schedule.members.ids).collect { |m| [ m.std_first_name + " " + m.std_last_name, m.id ] }
         @horses = Horse.where.not(availability: false).where.not(id: @riding_schedule.horses.ids).collect { |h| [ h.horse_name, h.id ] }
+        
+        #Generates the name of the signed in member so they can sign themselves up without seeing other users' names
         @signed_in_member = Member.where(id: session[:user_id]).collect { |m| [ m.std_first_name + " " + m.std_last_name, m.id ] }
     end
 
@@ -32,6 +36,7 @@ class RidingTimesController < ApplicationController
     end
 
     def page_title
+        #This defines the page title so the navbar can activate the correct tab
         @page_title = "Schedule"
     end
 end

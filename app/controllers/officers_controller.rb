@@ -7,6 +7,7 @@ class OfficersController < ApplicationController
 
   def new
     @officer = Officer.new
+    #Generates list of members for the dropdown menu on the new officer page
     @members = Member.all.collect { |m| [ m.std_first_name + " " + m.std_last_name, m.id ] }
   end
 
@@ -33,6 +34,7 @@ class OfficersController < ApplicationController
   end
 
   def page_title
+    #This defines the page title so the navbar can activate the correct tab
     @page_title = "Officers"
   end
 end

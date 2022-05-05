@@ -3,6 +3,7 @@ class Member < ApplicationRecord
     has_many :riding_preferences, dependent: :destroy
     has_many :horses, :through => :riding_preferences
     has_one :officer, dependent: :destroy
+    has_one :user, dependent: :destroy
 
     validates :uin , presence: true , numericality: { only_integer: true }
     validates :std_first_name , presence: true

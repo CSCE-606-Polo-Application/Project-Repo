@@ -9,7 +9,11 @@
         <th>Telephone</th>
         <th>Email</th>
         <% if user_signed_in? && session[:isOfficer] %>
-        <th>UIN</th>
+        <%
+=begin%>
+ <th>UIN</th> 
+<%
+=end%>
         <% end%>
     </tr>
   </thead>
@@ -32,9 +36,13 @@
           <%= officer.member.email %>
         </td>
         <% if user_signed_in? && session[:isOfficer] %>
-        <td>
+        <%
+=begin%>
+ <td>
           <%= officer.member.uin %>
-        </td>
+        </td> 
+<%
+=end%>
         <td>
         <%= link_to 'Remove', officer_path(officer), method: 'delete', data: { confirm: 'Are you sure?' } %>
         </td>

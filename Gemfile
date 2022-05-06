@@ -40,6 +40,7 @@ gem "tzinfo-data"
 #Bootstrap and Other Styling Stuff
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
+gem 'font-awesome-rails'
 
 #Sending Emails
 gem 'mail_form'

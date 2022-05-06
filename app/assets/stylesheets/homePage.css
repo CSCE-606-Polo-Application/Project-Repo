@@ -1,4 +1,68 @@
-/* .landing-image {
-    padding-bottom: 15px;
-    padding-top: 15px;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Oswald&display=swap');
+
+.landing-image {
+    height: 350px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#section_title {
+    padding-top: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#about {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: justify;
+    padding-bottom: 10px;
+}
+
+.social-area > h3 {
+    padding-top: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+.social-media-icons {
+    text-align: center;
+    padding-top: 75px;
+}
+
+.social-media-icons > a {
+    position: relative;
+    right: 15px;
+    margin-left: 20px;
+}
+
+.sign-in-button {
+    background-color: #500000; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+.sign-in-area > h3 {
+    padding-top: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.sign-in-area > div {
+    text-align: center;
+    padding-top: 75px;
+    padding-bottom: 10px;
+}

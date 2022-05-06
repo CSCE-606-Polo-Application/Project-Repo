@@ -1,16 +1,18 @@
 <html lang="en">
   <head>
     <title>Home Page</title>
-    <%stylesheet_link_tag 'homePage'%>
   </head>
 
   <body>
     <div class = "container-fluid h-100">
       <div class = "row">
-        <div class = "border col-md-9">
-        <%= image_tag "tamu-polo.jpg", height: 350, class: "rounded mx-auto d-block landing-image" %> 
+        <div class = "col-md-9">
+          <%= image_tag "tamu-polo.jpg", class: "rounded mx-auto d-block landing-image" %>
         </div>
-        <div class = "border col-md-3">
+        <div class = "sign-in-area col-md-3">
+          <h3>For Members/Officers:</h3>
+          <div> <%= button_to "Sign In", new_user_session_path, :class => "sign-in-button" %> </div>
+          <!--
           <table class="table table-striped col-md-12" id="homepage">
             <thead>
             <tr>
@@ -25,26 +27,35 @@
             <tbody>
             </tbody>
           </table>
+          -->
         </div>
       </div>
       <div class = "row">
-        <div class = "border col-md-9">
-        <h3>About Us</h3>
-        <p>The Texas A&M Polo club, founded in 1967, assists both men and women in learning and refining the basic skills of polo so that they can compete at a local, regional, and national level.
-          Intra-club games are scheduled to provide experience for novice members.
-          The club has a string of about twenty polo ponies, so owning a horse is not a prerequisite for membership.
-          All members are expected to assist in the daily care and feeding of the club’s ponies.</p>
+        <div class = "col-md-9">
+          <h3 id="section_title">Man. Man. Man. Line. Ball.</h3>
+          <p id="about">The Texas A&M Polo club, founded in 1967, assists both men and women in learning and refining the basic skills of polo so that they can compete at a local, regional, and national level.
+            Intra-club games are scheduled to provide experience for novice members.
+            The club has a string of about twenty polo ponies, so owning a horse is not a prerequisite for membership.
+            All members are expected to assist in the daily care and feeding of the club’s ponies.</p>
 
-        <p>The club is dedicated to introducing polo to anyone interested in learning about the “Sport of Kings,”
-          producing winning athletes,
-          and striving to win the coveted USPA Intercollegiate National Championship.</p>
+          <p id="about">The club is dedicated to introducing polo to anyone interested in learning about the “Sport of Kings,”
+            producing winning athletes,
+            and striving to win the coveted USPA Intercollegiate National Championship.</p>
 
-        <p>
-          The Texas A&M Polo Club is a part of Texas A&M Rec Sports and is advised by Keith Joseph.
-        </p>
-      </div>
-        <div class = "border col-md-3">
-        Socials!
+          <p id="about">The Texas A&M Polo Club is a part of Texas A&M Rec Sports and is advised by Keith Joseph!</p>
+        </div>
+        <div class = "social-area col-md-3">
+          <h3>Check out our Social Media!</h3>
+
+          <div class = "social-media-icons">
+            <a href = "https://www.instagram.com/tamupolo/">
+              <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://www.facebook.com/aggiepolo">
+              <i class="fa fa-facebook fa-3x" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -14,7 +14,15 @@
     <%= form.select :horse_id, @horses, { prompt: "Horse" }%>
   </div>
 
+  <%
+=begin%>
+ <div>
+  <%= button_to "Cancel",riding_schedule_path(@riding_schedule), method: 'get' %> 
+  </div> 
+<%
+=end%>
+  
   <div>
-  <%= form.submit "Submit"%> <%= button_to "Cancel",riding_schedule_path(@riding_schedule), method: 'get' %>
+  <%= form.submit "Submit"%> 
   </div>
 <% end %>

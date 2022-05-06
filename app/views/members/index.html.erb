@@ -7,7 +7,11 @@
       <th>Last Name</th>
       <th>Telephone</th>
       <th>Email</th>
-      <th>UIN</th>
+      <%
+=begin%>
+ <th>UIN</th> 
+<%
+=end%>
       <th>Profile</th>
     </tr>
   </thead>
@@ -26,9 +30,13 @@
         <td>
           <%= member.email %>
         </td>
-        <td>
+        <%
+=begin%>
+ <td>
           <%= member.uin %>
-        </td>
+        </td> 
+<%
+=end%>
         <td>
         <%= link_to "Profile", member_path(member) %>
         </td>

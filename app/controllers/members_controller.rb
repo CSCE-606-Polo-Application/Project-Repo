@@ -18,9 +18,13 @@ class MembersController < ApplicationController
     if (new_member.valid?)
       #When a user is first created, their id and member status is saved to the session variable so 
       #views will only show their correct level of access
-      session[:user_id] = new_member.id
-      session[:isOfficer]=false
-      redirect_to member_path(new_member.id)
+      user_params = {}
+      user_params[:member_id]=new_member.id
+      user_params[:email] = new_member.email
+      user_params[:password] = "Password"
+      user_params[:password_confirmation] = "Password"
+      new_user = User.create(user_params)
+      redirect_to members_path
     else
       redirect_to new_member_path
     end
